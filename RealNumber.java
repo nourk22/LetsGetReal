@@ -19,6 +19,9 @@ public class RealNumber{
   */
 
   public boolean equals (RealNumber other){
+    if (other.getValue()==0 || getValue()==0){
+      return other.getValue()==getValue();
+    }
     return Math.round(other.getValue()*10000) == Math.round(getValue()*10000);
   }
 
@@ -50,7 +53,7 @@ public class RealNumber{
   */
 
   public RealNumber divide(RealNumber other){
-    RealNumber division = new RealNumber(other.getValue() / getValue());
+    RealNumber division = new RealNumber(getValue() / other.getValue());
     return division;
   }
 
@@ -59,8 +62,8 @@ public class RealNumber{
     this minus the other
   */
   public RealNumber subtract(RealNumber other){
-    RealNumber difference = new RealNumber(other.getValue() / getValue());
-    return difference;
+    RealNumber diff = new RealNumber(getValue() - other.getValue());
+    return diff;
   }
 
 
