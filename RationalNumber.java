@@ -121,7 +121,8 @@ public class RationalNumber extends RealNumber{
       Return a new RationalNumber that is the product of this and the other
     */
     public RationalNumber multiply(RationalNumber other){
-      return null;
+      RationalNumber product = new RationalNumber(other.getNumerator() * getNumerator(), other.getDenominator() * getDenominator());
+      return product;
     }
 
     /**
@@ -129,20 +130,28 @@ public class RationalNumber extends RealNumber{
     */
 
     public RationalNumber divide(RationalNumber other){
-      return null;
+      RationalNumber division = new RationalNumber(other.getNumerator() * getDenominator(), other.getDenominator() * getNumerator());
+      return division;
     }
 
     /**
-    *Return a new RationalNumber that is the sum of this and the other
+      Return a new RationalNumber that is the sum of this and the other
     */
+
     public RationalNumber add(RationalNumber other){
-      return null;
+      int common = other.getDenominator() * getDenominator();
+      RationalNumber sum = new RationalNumber(other.getNumerator()*getDenominator() + getNumerator()*other.getDenominator(), common);
+      return sum;
     }
+
     /**
-    *Return a new RationalNumber that this minus the other
+      Return a new RationalNumber that this minus the other
     */
+
     public RationalNumber subtract(RationalNumber other){
-      return null;
+      int common = other.getDenominator() * getDenominator();
+      RationalNumber diff = new RationalNumber(getNumerator()*other.getDenominator() - other.getNumerator()*getDenominator(), common);
+      return diff;
     }
 
     public static void main(String[] args){
