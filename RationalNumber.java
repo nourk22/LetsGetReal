@@ -111,7 +111,7 @@ public class RationalNumber extends RealNumber{
     */
 
     private void reduce(){
-      int gcd = gcd(numerator, denominator);
+      int gcd = Math.abs(gcd(numerator, denominator));
       numerator = getNumerator() / gcd;
       denominator = getDenominator() / gcd;
     }
@@ -130,8 +130,7 @@ public class RationalNumber extends RealNumber{
     */
 
     public RationalNumber divide(RationalNumber other){
-      RationalNumber division = new RationalNumber(other.getNumerator() * getDenominator(), other.getDenominator() * getNumerator());
-      return division;
+      return multiply(other.reciprocal());
     }
 
     /**
