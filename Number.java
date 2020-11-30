@@ -8,7 +8,7 @@ public abstract class Number{
     return a positive value when this Number is larger than the other Number
   */
   public int compareTo(Number other){
-    if (this.equals(other.getValue())){
+    if (this.equals(other)){
       return 0;
     }else if (this.getValue()<other.getValue()){
       return -1;
@@ -22,11 +22,13 @@ public abstract class Number{
    *are within 0.00001 of eachother.
    *Special case: if one is exactly zero, the other must be exactly zero.
    */
+
   public boolean equals(Number other){
-    if (other.getValue()==0 || getValue()==0){
-      return other.getValue()==getValue();
+    if (other.getValue()==0 || this.getValue()==0){
+      return other.getValue()==this.getValue();
     }
-    return Math.round(other.getValue()*10000) == Math.round(getValue()*10000);
+
+    return Math.round(other.getValue()*10000) == Math.round(this.getValue()*10000);
   }
 
 }
