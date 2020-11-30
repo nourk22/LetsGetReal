@@ -1,4 +1,4 @@
-public class RationalNumber extends RealNumber{
+public class RationalNumber extends Number{
     private int numerator, denominator;
 
     /**Initialize the RationalNumber with the provided values
@@ -9,7 +9,8 @@ public class RationalNumber extends RealNumber{
     */
 
     public RationalNumber(int nume, int deno){
-      super(0.0);//this value is ignored!
+      //super(0.0);//this value is ignored!
+          //removed in HW21 with creation of abstract class Number
       if (deno == 0){
         numerator = 0;
         denominator = 1;
